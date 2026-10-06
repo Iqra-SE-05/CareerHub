@@ -1,1 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>CareerHub | Find Your Next Career</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">
+        <span class="logo-icon">C</span>
+        Career<span>Hub</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#jobs">Find Jobs</a>
+        <a href="#companies">Companies</a>
+        <a href="#resources">Career Resources</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <button class="login-btn">Login</button>
+        <button class="signup-btn">Sign Up</button>
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <span class="small-heading">
+                YOUR CAREER STARTS HERE
+            </span>
+
+            <h1>
+                Find Your Next
+                <span>Career Opportunity</span>
+            </h1>
+
+            <p>
+                Discover thousands of jobs, internships and career
+                opportunities from companies that are looking for talent like you.
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH BOX -->
+        <div class="search-box">
+
+            <div class="search-field">
+                <label>What are you looking for?</label>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Job title, keyword or company">
+            </div>
+
+            <div class="search-field">
+                <label>Location</label>
+                <input
+                    type="text"
+                    id="locationInput"
+                    placeholder="Lahore, Islamabad, Remote">
+            </div>
+
+            <div class="search-field">
+                <label>Job Type</label>
+
+                <select id="typeFilter">
+                    <option value="all">All Types</option>
+                    <option value="Full Time">Full Time</option>
+                    <option value="Part Time">Part Time</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Remote">Remote</option>
+                </select>
+
+            </div>
+
+            <button class="search-btn" onclick="searchJobs()">
+                Search Jobs
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+
+    <div>
+        <strong>10K+</strong>
+        <span>Available Jobs</span>
+    </div>
+
+    <div>
+        <strong>2K+</strong>
+        <span>Companies</span>
+    </div>
+
+    <div>
+        <strong>50K+</strong>
+        <span>Job Seekers</span>
+    </div>
+
+    <div>
+        <strong>95%</strong>
+        <span>Success Rate</span>
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section class="section" id="companies">
+
+    <div class="section-heading">
+
+        <div>
+            <span>EXPLORE OPPORTUNITIES</span>
+            <h2>Popular Job Categories</h2>
+        </div>
+
+        <a href="#jobs">View All Jobs →</a>
+
+    </div>
+
+
+    <div class="categories">
+
+        <div class="category-card" onclick="filterCategory('Technology')">
+            <div class="category-icon">💻</div>
+            <h3>Technology</h3>
+            <p>2,450 Jobs</p>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('Design')">
+            <div class="category-icon">🎨</div>
+            <h3>Design</h3>
+            <p>1,280 Jobs</p>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('Marketing')">
+            <div class="category-icon">📈</div>
+            <h3>Marketing</h3>
+            <p>980 Jobs</p>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('Finance')">
+            <div class="category-icon">💰</div>
+            <h3>Finance</h3>
+            <p>760 Jobs</p>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('Business')">
+            <div class="category-icon">💼</div>
+            <h3>Business</h3>
+            <p>1,120 Jobs</p>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('Education')">
+            <div class="category-icon">🎓</div>
+            <h3>Education</h3>
+            <p>640 Jobs</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- JOBS -->
+<section class="section jobs-section" id="jobs">
+
+    <div class="section-heading">
+
+        <div>
+            <span>LATEST OPPORTUNITIES</span>
+            <h2>Featured Jobs</h2>
+        </div>
+
+        <select id="sortJobs" onchange="sortJobs()">
+            <option value="latest">Latest Jobs</option>
+            <option value="salary">Highest Salary</option>
+        </select>
+
+    </div>
+
+
+    <div id="jobsContainer" class="jobs-grid"></div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="resources">
+
+    <div class="center-heading">
+        <span>HOW IT WORKS</span>
+        <h2>Start Your Career in 4 Simple Steps</h2>
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+            <div>01</div>
+            <h3>Create Your Profile</h3>
+            <p>Build a professional profile and showcase your skills.</p>
+        </div>
+
+        <div class="step">
+            <div>02</div>
+            <h3>Search Jobs</h3>
+            <p>Find opportunities matching your career goals.</p>
+        </div>
+
+        <div class="step">
+            <div>03</div>
+            <h3>Apply Easily</h3>
+            <p>Submit applications with just a few clicks.</p>
+        </div>
+
+        <div class="step">
+            <div>04</div>
+            <h3>Get Hired</h3>
+            <p>Connect with employers and start your career.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta" id="about">
+
+    <div>
+        <span>READY FOR YOUR NEXT STEP?</span>
+
+        <h2>
+            Your Dream Job Is
+            <span>Waiting For You.</span>
+        </h2>
+
+        <p>
+            Explore opportunities and take the next step in your career.
+        </p>
+
+        <button onclick="document.getElementById('jobs').scrollIntoView()">
+            Explore Jobs →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+                <span class="logo-icon">C</span>
+                Career<span>Hub</span>
+            </div>
+
+            <p>
+                Connecting talented people with great career opportunities.
+            </p>
+
+        </div>
+
+
+        <div>
+            <h4>For Job Seekers</h4>
+            <a href="#jobs">Find Jobs</a>
+            <a href="#">Saved Jobs</a>
+            <a href="#">Career Resources</a>
+            <a href="#">My Profile</a>
+        </div>
+
+
+        <div>
+            <h4>For Employers</h4>
+            <a href="#">Post a Job</a>
+            <a href="#">Find Candidates</a>
+            <a href="#">Employer Dashboard</a>
+        </div>
+
+
+        <div>
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 CareerHub. All rights reserved.
+    </div>
+
+</footer>
+
+
+<!-- APPLICATION MODAL -->
+<div id="applicationModal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="close-btn" onclick="closeApplication()">×</button>
+
+        <h2>Apply for Job</h2>
+
+        <p id="applicationJob"></p>
+
+        <input id="appName" type="text" placeholder="Full Name">
+
+        <input id="appEmail" type="email" placeholder="Email Address">
+
+        <input id="appPhone" type="text" placeholder="Phone Number">
+
+        <input id="appResume" type="text" placeholder="Resume / Portfolio Link">
+
+        <textarea
+            id="appMessage"
+            placeholder="Cover Letter"></textarea>
+
+        <button class="submit-btn" onclick="submitApplication()">
+            Submit Application
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
